@@ -1,17 +1,21 @@
-import { useOrder } from "../../hook/useOrder";
+import { useOrder } from "../../context/orderProvider";
 
 export function CostumerOrder () {
-  const { order, clearOrder, addToOrder } = useOrder()
+  const { order, increaseQuantity, decreaseQuantity, clearOrder, productQuantities } = useOrder()
 
   return (
     <>
-    <ul>
+    <ul className="orderProducts">
       {order.map(item => (
         <li key={item.id}>
-          <button>-</button><p>{item.quantity}</p><button onClick={addToOrder}>+</button>
-          <p>{item.name}</p>
-          <p>{item.price}</p>
-          <p>$ {item.price*item.quantity}</p>
+          <p className="product-name">{item.name}</p>
+          <p>${item.price}</p>
+          <div id="qtbtn">
+            <button id="remove" onClick={() => decreaseQuantity(item)}>-</button>
+            <p>{productQuantities[item.id] || 0}</p>
+            <button id="add" onClick={() => increaseQuantity(item)}>+</button>
+            <p>$ {item.price * (productQuantities[item.id] || 0)}</p>
+          </div>          
         </li>
       ))}
     </ul>

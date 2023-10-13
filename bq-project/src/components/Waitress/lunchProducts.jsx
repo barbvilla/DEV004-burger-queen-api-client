@@ -1,3 +1,5 @@
+import { OrderProvider } from "../../context/orderProvider";
+
 const LunchProducts = ({ products }) => {
   const lunchProducts = products.filter((item) => item.type === "Almuerzo");
   return (

@@ -5,7 +5,7 @@ import BFProducts from '../components/Waitress/bFProducts';
 import LunchProducts from '../components/Waitress/lunchProducts';
 import { useEffect } from 'react';
 import Order from '../components/Waitress/Order'
-import { OrderProvider } from '../context/order';
+import { OrderProvider } from '../context/orderProvider';
 
 
 export default function Waitress() {

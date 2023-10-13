@@ -1,8 +1,17 @@
-import { useOrder } from '../../hook/useOrder';
+import { useOrder } from "../../context/orderProvider";
 
 const Products = ({ products }) => {
-  const { addToOrder } = useOrder()
-  
+  const { addToOrder, setProductQuantities } = useOrder();
+
+  const handleAddToOrder = (product) => {
+    addToOrder(product);
+    setProductQuantities((prevQuantities) => {
+      const updatedQuantities = { ...prevQuantities };
+      updatedQuantities[product.id] = (updatedQuantities[product.id] || 0) + 1;
+      return updatedQuantities;
+    });
+  };
+
   return (
     <div className="products-card">
       {
@@ -11,7 +20,7 @@ const Products = ({ products }) => {
             <h4>{product.name}</h4>
             <img src={product.image} />
             <p>${product.price}</p>
-            <button onClick={() => addToOrder(product)}>Agregar</button>
+            <button onClick={() => handleAddToOrder(product)}>Agregar</button>
           </div>
         ))
       }
@@ -20,7 +29,4 @@ const Products = ({ products }) => {
 }
 
 export default Products;
-
-
-
 
