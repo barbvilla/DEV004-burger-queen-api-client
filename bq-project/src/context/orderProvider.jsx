@@ -49,7 +49,6 @@ export function OrderProvider({ children }) {
       return item;
     });
   
-    // Filtra los productos cuya cantidad sea mayor o igual a 1
     const filteredOrder = updatedOrder.filter((item) => item.quantity >= 1);
   
     setOrder(filteredOrder);
@@ -81,4 +80,3 @@ export function OrderProvider({ children }) {
     </OrderContext.Provider>
   );
 }
-

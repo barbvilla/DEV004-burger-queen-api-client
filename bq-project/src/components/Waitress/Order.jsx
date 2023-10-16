@@ -9,7 +9,6 @@ export function CostumerOrder () {
       {order.map(item => (
         <li key={item.id}>
           <p className="product-name">{item.name}</p>
-          <p>${item.price}</p>
           <div id="qtbtn">
             <button id="remove" onClick={() => decreaseQuantity(item)}>-</button>
             <p>{productQuantities[item.id] || 0}</p>
@@ -19,8 +18,11 @@ export function CostumerOrder () {
         </li>
       ))}
     </ul>
-    <button onClick={clearOrder}>Eliminar Orden</button>
-    <strong>Total $ </strong>
+    <strong className="orderTotal">Total $ </strong>
+    <div className="delete-send-btn">
+      <button className="del-btn" onClick={clearOrder}>Eliminar Orden</button>
+      <button className="send-btn">Enviar a cocina</button>
+    </div>
     </>
   );
 

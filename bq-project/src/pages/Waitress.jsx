@@ -48,13 +48,6 @@ export default function Waitress() {
     setBfProducts(false);
   }
 
-  /* const addProduct = () => {
-
-  } */
-  /*  const handleNewOrder = () => {
- 
-   } */
-
   return (
     <OrderProvider>
       <div className="nav">
@@ -86,7 +79,6 @@ export default function Waitress() {
         <h2>Pedido</h2>
         <h4>Cliente: {costumerName}</h4>
         <Order />
-        <button>Enviar a cocina</button>
       </div>
     </OrderProvider>
 

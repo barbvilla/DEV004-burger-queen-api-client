@@ -112,7 +112,7 @@
 .orders {
   grid-column: 7 / 10;
   grid-row: 2 / 10;
-  padding: 15px 30px;
+  padding: 15px 20px;
   margin: 20px 20px 0 0;
   background-color: white;
   border-color: rgb(181, 173, 173);
@@ -121,29 +121,55 @@
   border-radius: 25px;
 }
 
+  .orderProducts {
+    background-color: white;
+  }
+
   #qtbtn {
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    justify-content: space-around;
   }
 
   .orders button {
     align-self: center;
     border-radius: 25px;
-    margin-bottom: 10px;
-    width: 120px;
-    background-color: #F5A929;
+    
+    width: fit-content;
+    padding: 0 10px;
     color: white;
     border-radius: 25px;
     height: 30px;
     border: none;
   }
 
+  /* .orderTotal {
+    
+  } */
+
+  .delete-send-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .del-btn {
+    background-color: rgb(255, 113, 113);
+  }
+
+  .send-btn {
+    background-color: green;
+  }
+
   #remove {
     width: 20px;
     margin: 0 2px;
+    background-color: #F5A929;
   }
 
   #add {
     width: 20px;
     margin: 0 2px;
+    background-color: #F5A929;
   }
